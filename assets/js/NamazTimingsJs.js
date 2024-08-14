@@ -1,32 +1,7 @@
-async function getTimings() {
-    const location = document.getElementById('locationInput').value;
-    if (location.trim() === "") {
-        alert("Please enter a location.");
-        return;
-    }
-    try {
-        const response = await fetch("https://api.aladhan.com/v1/timingsByCity?city=" + location + "&country=your_country&method=2");
-        const data = await response.json();
-        displayTimings(data.data.timings);
-    } catch (error) {
-        alert("Error fetching timings. Please try again.");
-    }
-}
-
-function displayTimings(timings) {
-    const timingsDiv = document.getElementById('timings');
-    timingsDiv.innerHTML = `
-        <div class="timing-item">Fajr: ${timings.Fajr}</div>
-        <div class="timing-item">Dhuhr: ${timings.Dhuhr}</div>
-        <div class="timing-item">Asr: ${timings.Asr}</div>
-        <div class="timing-item">Maghrib: ${timings.Maghrib}</div>
-        <div class="timing-item">Isha: ${timings.Isha}</div>
-    `;
-
-    // Add slow scroll effect after displaying timings
-    const timingsWrapper = document.querySelector('.timings');
-    timingsWrapper.classList.add('slow-scroll');
-}
+// Automatically get the location and timings when the page loads
+window.onload = function() {
+    getLocation();
+};
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -36,29 +11,46 @@ function getLocation() {
     }
 }
 
-function showPosition(position) {
+async function showPosition(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    getTimingsByCoordinates(lat, lon);
+    
+    // Fetch the city name using reverse geocoding API
+    try {
+        const locationResponse = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+        const locationData = await locationResponse.json();
+        const cityName = locationData.address.city || locationData.address.town || locationData.address.village || locationData.address.county || "Unknown Location";
+        
+        // Update the location display
+        document.getElementById('locationDisplay').textContent = `Location: ${cityName}`;
+
+        // Fetch and display Namaz timings
+        await getTimingsByCoordinates(lat, lon);
+    } catch (error) {
+        console.error("Error fetching location name:", error);
+        document.getElementById('locationDisplay').textContent = "Location: Unknown";
+    }
 }
 
 function showError(error) {
-    switch(error.code) {
+    const locationDisplay = document.getElementById('locationDisplay');
+    switch (error.code) {
         case error.PERMISSION_DENIED:
-            alert("User denied the request for Geolocation.");
+            locationDisplay.textContent = "User denied the request for Geolocation.";
             break;
         case error.POSITION_UNAVAILABLE:
-            alert("Location information is unavailable.");
+            locationDisplay.textContent = "Location information is unavailable.";
             break;
         case error.TIMEOUT:
-            alert("The request to get user location timed out.");
+            locationDisplay.textContent = "The request to get user location timed out.";
             break;
         case error.UNKNOWN_ERROR:
-            alert("An unknown error occurred.");
+            locationDisplay.textContent = "An unknown error occurred.";
             break;
     }
 }
 
+// Fetch Namaz timings based on coordinates
 async function getTimingsByCoordinates(lat, lon) {
     try {
         const response = await fetch(`https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=2`);
@@ -67,4 +59,16 @@ async function getTimingsByCoordinates(lat, lon) {
     } catch (error) {
         alert("Error fetching timings. Please try again.");
     }
+}
+
+// Display Namaz timings
+function displayTimings(timings) {
+    const timingsDiv = document.getElementById('timings');
+    timingsDiv.innerHTML = `
+        <div class="timing-item">Fajr: ${timings.Fajr}</div>
+        <div class="timing-item">Dhuhr: ${timings.Dhuhr}</div>
+        <div class="timing-item">Asr: ${timings.Asr}</div>
+        <div class="timing-item">Maghrib: ${timings.Maghrib}</div>
+        <div class="timing-item">Isha: ${timings.Isha}</div>
+    `;
 }

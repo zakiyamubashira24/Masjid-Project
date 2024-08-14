@@ -1,5 +1,14 @@
 let donors = [];
 
+// Load donors from local storage when the page loads
+window.addEventListener('load', function() {
+    const storedDonors = localStorage.getItem('donors');
+    if (storedDonors) {
+        donors = JSON.parse(storedDonors);
+        updateDonorList();
+    }
+});
+
 function addDonor() {
     const nameInput = document.getElementById('donor-name');
     const name = nameInput.value.trim();
@@ -11,6 +20,10 @@ function addDonor() {
         donors.unshift({ name, amount, timestamp }); // Add the new donor to the start of the array
         nameInput.value = '';
         amountInput.value = '';
+        
+        // Save the updated donor list to local storage
+        localStorage.setItem('donors', JSON.stringify(donors));
+        
         updateDonorList();
     }
 }
@@ -25,7 +38,7 @@ function updateDonorList() {
         donorList.appendChild(li);
     });
 
-    // Update the animation duration based on the number of items
+    // Update the animation duration based on the number of items (if applicable)
     document.documentElement.style.setProperty('--total-items', donors.length);
 }
 
