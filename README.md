@@ -1,2 +1,2 @@
-# Masjid-Project
-New Modified Project
+# Masjid-Website
+Front - end Project using HTML , CSS and JS

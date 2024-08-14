@@ -1,0 +1,295 @@
+<!--
+Author: WebThemez
+Author URL: http://webthemez.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Real Estate Builders Free Responsive Website Templates - icon">
+	<meta name="author" content="webThemez.com">
+	<title>Real Estate Builders Free Responsive Website - icon</title>
+	<link rel="favicon" href="assets/images/favicon.png">
+	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css"> 
+	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen"> 
+	<link rel="stylesheet" href="assets/css/style.css">
+    <link rel='stylesheet' id='camera-css'  href='assets/css/camera.css' type='text/css' media='all'>
+    <link rel="stylesheet" href="assets/css/NamazTimeforHome.css">
+    <link rel="stylesheet" href="./assets/css/Donation.css">
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body onload="getLocation()">
+	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html">
+					<img src="assets/images/logo.png" alt="Techro HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right mainNav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="NamazTime.html">Namaz Timings</a></li>
+					<li><a href="Donations.html">Donations</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+					<div class="fluid_container">
+                    <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
+                        <div data-thumb="assets/images/masjid img.jpg" data-src="assets/images/masjid img.jpg">
+                        </div> 
+                        <div data-thumb="assets/images/masjid img2.jpg" data-src="assets/images/masjid img2.jpg">
+                        </div>
+                        <div data-thumb="assets/images/masjid img3.jpg" data-src="assets/images/masjid img3.jpg">
+                        </div> 
+                    </div><!-- #camera_wrap_3 -->
+                </div><!-- .fluid_container -->
+		</div>
+	</header>
+
+            <!-- Namaz Timings  -->
+    
+    <div class="cont">
+        <h1>Namaz Timings</h1>
+        <input type="text" id="locationInput" placeholder="Enter location">
+        <button onclick="getTimings()">Get Timings</button>
+        <button onclick="getLocation()">Current Location</button>
+        <div class="timings-wrapper">
+            <div class="timings" id="timings"></div>
+        </div>
+        <img src="./assets/images/masjid img2.jpg" alt="Mosque" class="mosque-image">
+    </div>
+    
+
+    <!-- donations section  -->
+    
+    <div class="contd">
+        <main>
+            <h1>Donations</h1>
+            <div class="info-section">
+                <p class="info-text">
+                    <b>"Whatever you 'believers' spend in charity, it is for your own good-as long as you do so seeking the pleasure of Allah."</b>
+                </p>
+            </div>
+            <div class="donation-section">
+                <div class="donor-list">
+                    <h2>Recent Donors</h2>
+                    <div class="donor-list-wrapper">
+                        <ul id="donors">
+                            <!-- Donor names will be added here -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="qr-code-section">
+                    <h2>Scan QR Code to Donate</h2>
+                    <img src="./assets/images/Donation imgs/QR code.jpg" alt="QR Code" class="qr-code" width="100px" height="100px"><br>
+                    <div class="inp">
+                        <input type="text" id="donor-name" placeholder="Enter your name">
+                        <input type="number" id="donor-amount" placeholder="Enter donation amount">
+                        <button onclick="addDonor()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+
+	<!-- /Header --><section class="secpadding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title-box clearfix">
+                    <h2 class="title-box_primary">Welcome to Noorani Masjid</h2>
+                </div>
+                <p>Welcome to Noorani Masjid, a place of worship, community, and learning. We are dedicated to serving the spiritual and social needs of our community. Join us for daily prayers, educational programs, and community events.</p>
+                <p>Our Masjid is open to all, and we offer a variety of services including Quran classes, family counseling, and interfaith dialogues. We strive to foster a welcoming environment for everyone. </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-box">
+    <div class="container">
+        <h2><span>Ongoing Initiatives</span></h2>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail thumbnail4">
+                    <img src="assets/images/initiative1.jpg" alt="">
+
+                    <div class="caption">
+                        <h4>
+                            <a href="#">
+                                Ramadan Food Drive
+                            </a>
+                        </h4>
+
+                        <p>Join our annual Ramadan Food Drive to help provide meals to those in need. Your contributions make a difference in our community.</p>
+                        <a href="#" data-title="Read More" class="btn-link"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail thumbnail4">
+                    <img src="assets/images/initiative2.jpg" alt="">
+
+                    <div class="caption">
+                        <h4>
+                            <a href="#">
+                                Youth Quran Classes
+                            </a>
+                        </h4>
+
+                        <p>Our Youth Quran Classes are designed to engage and educate the younger generation about Islamic teachings and values.</p>
+                        <a href="#" data-title="Read More" class="btn-link"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail thumbnail4">
+                    <img src="assets/images/initiative3.jpg" alt="">
+
+                    <div class="caption">
+                        <h4>
+                            <a href="#">
+                                Community Outreach Programs
+                            </a>
+                        </h4>
+
+                        <p>We are committed to building bridges with our neighbors through various community outreach programs and interfaith initiatives.</p>
+                        <a href="#" data-title="Read More" class="btn-link"><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="btm-section secpadding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="title-box clearfix">
+                    <h3 class="title-box_primary">Upcoming Events</h3>
+                </div>
+                <div class="list styled custom-list">
+                    <ul>
+                        <li><a title="Annual Fundraiser Dinner" href="#">Annual Fundraiser Dinner</a></li>
+                        <li><a title="Eid Celebrations" href="#">Eid Celebrations</a></li>
+                        <li><a title="Community Iftar" href="#">Community Iftar</a></li>
+                        <li><a title="Islamic Lecture Series" href="#">Islamic Lecture Series</a></li>
+                        <li><a title="Youth Halaqah" href="#">Youth Halaqah</a></li>
+                        <li><a title="Interfaith Dialogue" href="#">Interfaith Dialogue</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="title-box clearfix">
+                    <h3 class="title-box_primary">Masjid Services</h3>
+                </div>
+                <div class="list styled custom-list">
+                    <ul>
+                        <li><a title="Daily Prayer Services" href="#">Daily Prayer Services</a></li>
+                        <li><a title="Quranic Studies" href="#">Quranic Studies</a></li>
+                        <li><a title="Marriage Services" href="#">Marriage Services</a></li>
+                        <li><a title="Funeral Services" href="#">Funeral Services</a></li>
+                        <li><a title="Family Counseling" href="#">Family Counseling</a></li>
+                        <li><a title="Zakat Distribution" href="#">Zakat Distribution</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="title-box clearfix">
+                    <h3 class="title-box_primary">Testimonials</h3>
+                </div>
+                <blockquote class="blockquote-1">
+                    <p>"The Masjid has been a beacon of hope and spirituality in our community. The programs offered here have positively impacted my life and the lives of many others."</p>
+                    <small>Brother Ahmad, Community Member</small>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 panel">
+                    <div class="panel-body">
+                        <p class="simplenav">
+                            <a href="index.html">Home</a> |
+                            <a href="about.html">About</a> |
+                            <a href="services.html">Services</a> |
+                            <a href="projects.html">Projects</a> |
+                            <a href="contact.html">Contact</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 panel">
+                    <div class="panel-body">
+                        <p class="text-right">
+                            Copyright &copy; 2024. [Masjid Name]
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="assets/js/modernizr-latest.js"></script> 
+	<script type='text/javascript' src='assets/js/jquery.min.js'></script>
+    <script type='text/javascript' src='assets/js/fancybox/jquery.fancybox.pack.js'></script>
+    
+    <script type='text/javascript' src='assets/js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='assets/js/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='assets/js/camera.min.js'></script> 
+    <script src="assets/js/bootstrap.min.js"></script> 
+	<script src="assets/js/custom.js"></script>
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_4').camera({
+				height: '750',
+				loader: 'bar',
+				pagination: false,
+				thumbnails: false,
+				hover: false,
+				opacityOnGrid: false,
+				imagePath: 'assets/images/'
+			});
+
+		});
+	</script>
+    <!-- donation script  -->
+    
+    <script src="./assets/js/Donation.js"></script>
+	<script src="assets/js/custom.js"></script>
+    <script src="assets/js/NamazTimingsJs.js"></script>
+</body>
+</html>

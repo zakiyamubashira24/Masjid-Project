@@ -1,0 +1,77 @@
+
+.cont {
+    max-width: 55%;
+    margin: 50px 100px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+.social-icons {
+    margin-bottom: 20px;
+}
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+input[type="text"] {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+.timings {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    animation: scrollTimings linear infinite;
+    animation-duration: 10s; /* Initial speed */
+}
+.timing-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+.mosque-image {
+    position: absolute;
+    top: 0px;
+    right: -500px; /* Adjust this value to position the image */
+    width: 500px;
+    height: 414px;
+}
+
+.slow-scroll {
+    animation-duration: 20s; /* Slow down the scrolling after fetching timings */
+}
+
+.timings-wrapper {
+    height: 200px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes scrollTimings {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
